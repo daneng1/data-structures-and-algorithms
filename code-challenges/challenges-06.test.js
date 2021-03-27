@@ -62,7 +62,7 @@ let characters = [
 
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
+  return charArray.sort((a, b) => a.children.length === b.children.length ? (a.house > b.house ? 1 : -1) : a.children.length > b.children.length ? 1 : -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,9 +84,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  const newArr = [];
-  newArr.push(Object.keys(obj));
-  return newArr;
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,8 +103,9 @@ describe('Testing challenge 3', () => {
 });
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => value in obj;
-
+const checkValues = (obj, value) => {
+  return Object.values(obj).includes(value) ? true : false;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -137,7 +136,7 @@ describe('Testing challenge 4', () => {
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(value => value.join(': '));
 };
 
 
@@ -156,10 +155,7 @@ describe('Testing challenge 5', () => {
 ------------------------------------------------------------------------------------------------ */
 
 const getHouses = (arr) => {
-  let houses = [];
-  for (var i=0; i<arr.length;i++) {
-    houses.push(arr[i].house);
-  }
+  const houses = arr.map(obj => obj.house);
   return houses;
 };
 
@@ -186,7 +182,14 @@ describe('Testing challenge 6', () => {
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let children = false;
+  arr.forEach(value => {
+    const array = Object.values(value);
+    if(array[0] === character && array[2] !== []){
+      children = true;
+    }
+  });
+  return children;
 
 };
 
@@ -300,7 +303,7 @@ describe('Testing challenge 4', () => {
 
 describe('Testing challenge 5', () => {
   test('It should return an array of the names of the houses', () => {
-    expect(getHouses(characters)[5]).toStrictEqual('Greyjoy');
+    expect(getHouses(characters)[0]).toStrictEqual('Greyjoy');
     expect(getHouses(characters).length).toStrictEqual(7);
   });
 });

@@ -14,10 +14,10 @@ Write a function called addTwo that takes in an array and adds two to every valu
 const addTwo = (arr) => {
   const newArr=[];
   for (var i=0;i<arr.length; i++){
-    newArr.push(arr[i] + 2)
+    newArr.push(arr[i] + 2);
   }
   return newArr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -38,7 +38,7 @@ Write a function named containsW that takes in a string. This function should us
 // })
 
 const containsW = (str) => {
-  const regex = /w/gm
+  const regex = /w/gm;
   const string = regex.test(str);
   return string;
 }
