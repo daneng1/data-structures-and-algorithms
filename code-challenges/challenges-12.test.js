@@ -8,15 +8,17 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => Math.max(arr);
-
-
+const maxInArray = (arr) => {
+  return arr.reduce( (accumulator, currentValue) => {
+    return Math.max(accumulator,currentValue);
+  });
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named findMax that takes in a matrix of positive numbers and returns the number with the highest value.
 
-For example: 
+For example:
 [
   [1, 3, 4, 5],
   [4, 5, 6],
@@ -26,7 +28,11 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  return matrix.reduce((acc, curr) => {
+    return Math.max(acc, (curr.reduce((acc2, curr2) => {
+      return Math.max(acc2, curr2);
+    }, null)));
+  }, null);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +50,11 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  return matrix.reduce((acc, curr) => {
+    return acc + curr.reduce((acc2, curr2) => {
+      return acc2 + curr2;
+    }, 0);
+  }, 0);
 };
 
 
@@ -71,8 +81,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  return stores.reduce((acc, curr) => acc.map((currentVal, index) => currentVal + curr[index]));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +95,10 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  return data.reduce((acc, curr, i) => {
+    acc.push({sales: `${curr} cookies`, time: hours[i]});
+    return acc;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +123,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
