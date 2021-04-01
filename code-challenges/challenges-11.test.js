@@ -96,7 +96,7 @@ If it does, return true. If not, return false.
 // });
 
 const hasNumber = (string) => {
-  let regex = /[a-z]+[0-9]+/gm;
+  let regex = /^(\w+[.])?\w+@\w+\.(net|com|org)$/gm;
   let answer = regex.test(string);
   return answer;
 };
@@ -146,8 +146,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 //   });
 // });
 
-const validateEmail = (email) => {
-  return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+const validatePhoneNumber = (phoneNumber) => {
+  return /^(\(\d{3}\)|\d{3})[-\s]?\d{3}[-\s]?\d{4}$/.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
