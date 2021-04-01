@@ -101,7 +101,9 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 //   });
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  const gender = input.filter(character => {return character.gender === 'female' || character.gender === 'male'}).map(character => character.name).join(' and ');
+
+  console.log(gender);
 };
 
 /* ------------------------------------------------------------------------------------------------
