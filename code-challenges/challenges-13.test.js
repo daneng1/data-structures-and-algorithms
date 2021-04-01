@@ -70,7 +70,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 // });
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter( (smile) => /:\)/.test(smile));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +90,12 @@ For example, (123) 456-7890 returns 1234567890
 // });
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  arr.map( num => {
+    const newNumber = num.replace(/\D+/g, '');
+    newArr.push(newNumber);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,12 +115,13 @@ For example, 'abcdefg' returns 'bdf'
 // });
 
 const onlyOddChars = (str) => {
-  const newStr = '';
-  for (var i=0;i<str.length;i++) {
-    if (i % 2 != 0) {
-      return newStr.push(str.charAt[i]);
+  const newArr = [];
+  str.split('').map((value, i) => {
+    if (i % 2 !== 0) {
+      newArr.push(value);
     }
-  }
+  });
+  return newArr.join('');
 };
 
 
@@ -135,11 +141,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 // });
 
 const allHappy = (arr) => {
-  const newArr = arr.filter((value) => {
-    return value.includes(':)');
-  });
-  console.log(newArr);
-  return newArr === arr ? true : false ;
+  return arr.every( value => value.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
