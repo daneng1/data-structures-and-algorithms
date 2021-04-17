@@ -95,11 +95,8 @@ If it does, return true. If not, return false.
 //   });
 // });
 
-const hasNumber = (string) => {
-  let regex = /^(\w+[.])?\w+@\w+\.(net|com|org)$/gm;
-  let answer = regex.test(string);
-  return answer;
-};
+const hasNumber = (string) => /[a-zA-Z]+\d+/.test(string);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -146,9 +143,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 //   });
 // });
 
-const validatePhoneNumber = (phoneNumber) => {
-  return /^(\(\d{3}\)|\d{3})[-\s]?\d{3}[-\s]?\d{4}$/.test(phoneNumber);
-};
+const validateEmail = (email) => /^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.com$|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.net|[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.?[a-zA-Z0-9]\.org/.test(email);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -194,9 +190,8 @@ Return either true or false.
 //   });
 // });
 
-const validatePhoneNumber = (phoneNumber) => {
-  return /\(?\d{3}\)?\W?-?\d{3}-?\W?\d{4}$/mg.test(phoneNumber);
-};
+const validatePhoneNumber = (phoneNumber) => /^\(\d{3}\)[-\s]?\d{3}[\s-]?\d{4}$|^\d{3}[-\s]?\d{3}[\s-]?\d{4}$/.test(phoneNumber);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
