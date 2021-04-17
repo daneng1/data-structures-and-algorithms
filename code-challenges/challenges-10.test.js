@@ -100,11 +100,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 //     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
 //   });
 
-const divisibleByFiveTwoToThePower = (input) => {
-  const gender = input.filter(character => {return character.gender === 'female' || character.gender === 'male'}).map(character => character.name).join(' and ');
-
-  console.log(gender);
-};
+const divisibleByFiveTwoToThePower = (input) => input.map(arr => arr.filter(number => typeof(number) === 'number' && number % 5 === 0).map(value => Math.pow(2, value)));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -174,11 +170,8 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  const gender = data.filter(character => {return character.gender === 'female' || character.gender === 'male'}).map(character => character.name).join(' and ');
-  // go through each character and return just the name
-  console.log(gender);
-};
+const findMaleAndFemale = (data) => data.filter(obj => obj.gender === 'male' || obj.gender === 'female').map(character => character.name).join(' and ');
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
@@ -191,9 +184,13 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 //   });
 // });
 
-let findShortest = (data) => {
-  // Solution code here...
-};
+const findShortest = (data) => data.sort((a,b) => parseInt(a.height) < parseInt(b.height) ? -1 : 1)[0].name;
+
+// Look at data
+// Compare value of height between first and second person
+// keep shortest and then compare to next person
+// continue until done with all people
+// return name of shortest person
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

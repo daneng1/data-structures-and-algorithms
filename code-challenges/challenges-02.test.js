@@ -17,7 +17,7 @@ const raisedToTheThird = (arr) => {
   const newArr = [];
   arr.forEach(x => newArr.push(Math.pow(x, 3)));
   return newArr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
