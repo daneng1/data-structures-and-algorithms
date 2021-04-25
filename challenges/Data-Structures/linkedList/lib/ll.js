@@ -44,19 +44,25 @@ class LinkedList {
     return false;
   }
 
+  getByIndex(index) {
+    if (index < 0 || index >= this.length) return null
+
+    let current = this.head;
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+    return current;
+  }
+
   toString() {
     let thisNode = this.head;
-    let newString = '';
+    let output = '';
 
-    if(thisNode === null) {
-      return 'NULL';
-    } else {
-      while (thisNode !== null) {
-        newString = newString.concat(`{ ${thisNode.value} } => `);
-        thisNode = thisNode.next;
-      }
+    while (thisNode) {
+      output = output.concat(`{ ${thisNode.value} } => `);
+      thisNode = thisNode.next;
     }
-    return newString.concat('NULL');
+    return output.concat('NULL');
   }
 }
 

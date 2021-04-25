@@ -3,7 +3,7 @@
 const LL = require('../lib/ll.js');
 
 describe('****Linked List Tests***', () => {
-  it('it should creat an empty Linked List', () => { 
+  it('it should create an empty Linked List', () => {
     let list = new LL;
     expect(list.head).toEqual(null);
   });
@@ -23,6 +23,20 @@ describe('****Linked List Tests***', () => {
 
     list.insert(first);
     expect(list.head.value).toEqual(10);
+    console.log(list);
+  });
+
+  it('should properly point to indexed node in the Linked List', () => {
+    let list = new LL;
+    let first = 10;
+    let second = 20;
+    let third = 30;
+
+    list.insert(first);
+    list.insert(second);
+    list.insert(third);
+    expect(list.head.value).toEqual(30);
+    expect(list.getByIndex(1).value).toBe(20);
     console.log(list);
   });
 
