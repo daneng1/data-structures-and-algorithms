@@ -79,4 +79,32 @@ describe('****Linked List Tests***', () => {
     console.log(list.toString);
     expect(list.toString()).toEqual(returnVal);
   });
+
+  it('should insert a new node before a specified value', () => {
+    let list = new LL;
+    let first = 10;
+    let second = 40;
+    let third = 50;
+
+    list.insert(first);
+    list.insert(second);
+    list.insert(third);
+
+    list.insertBefore(40, 5);
+    expect(list.getByIndex(1).value).toBe(5);
+  });
+
+  it('should insert a new node after a specified value', () => {
+    let list = new LL;
+    let first = 10;
+    let second = 40;
+    let third = 50;
+
+    list.insert(first);
+    list.insert(second);
+    list.insert(third);
+
+    list.insertAfter(40, 5);
+    expect(list.getByIndex(1).value).toBe(40);
+  });
 });
