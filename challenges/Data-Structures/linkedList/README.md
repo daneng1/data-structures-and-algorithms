@@ -1,4 +1,5 @@
 # Singly Linked List
+
 Build a linked list from modularized components using Node.js.
 
 ## Challenge
@@ -7,6 +8,7 @@ Build a linked list from modularized components using Node.js.
 - Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 - Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 `"{ a } -> { b } -> { c } -> NULL"`
+- Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
 
 ## Approach & Efficiency
 
@@ -22,6 +24,7 @@ getByIndex - search the LL and return the index of the value.
 insertBefore - insert a new node before a specified value
 insertAfter - insert a new node after a specified value
 toString - create a string from all the node values
+kthFromEnd - returns the value at node k from end
 
 ## Tests
 
@@ -32,3 +35,4 @@ toString - create a string from all the node values
 1. Will return true when finding a value within the linked list that exists
 1. Will return false when searching for a value in the linked list that does not exist
 1. Can properly return a collection of all the values that exist in the linked list
+1. Can return the value at node k from the end.
