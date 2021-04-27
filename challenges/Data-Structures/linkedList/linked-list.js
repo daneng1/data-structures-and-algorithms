@@ -19,6 +19,7 @@ console.log(ll.toString());
 ll.insertBefore(200,5);
 console.log(ll.toString());
 ll.insertAfter(200,9);
+ll.kthFromEnd(6);
 // console.log('number at index 1:', ll.getByIndex(1));
 // console.log('More items', ll);
 
