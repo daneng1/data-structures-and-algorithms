@@ -74,6 +74,32 @@ class LinkedList {
     }
   }
 
+  zipList(list1, list2) {
+    if (list1.head === null) {
+      return list2;
+    }
+    if (list2.head === null) {
+      return list1.head;
+    }
+
+    let newList = new LinkedList;
+    list1 = list1.head;
+    list2 = list2.head;
+
+    while(list1 || list2) {
+      if (list1) {
+        newList.append(list1.value);
+        list1 = list1.next;
+      }
+      if (list2) {
+        newList.append(list2.value);
+        list2 = list2.next;
+      }
+    }
+    // console.log(newList.toString());
+    return newList;
+  }
+
 
   // insertBeforeIndex(index, newValue) {
   //   const newNode = new Node(newValue);
