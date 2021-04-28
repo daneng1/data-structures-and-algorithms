@@ -103,7 +103,7 @@ describe('****Linked List Tests***', () => {
     expect(list.getByIndex(1).value).toBe(40);
   });
 
-  it('should find the node value kth fromm the end', () => {
+  it('should find the node value kth from the end', () => {
     let list = new LL;
     let first = 10;
     let second = 40;
@@ -121,5 +121,27 @@ describe('****Linked List Tests***', () => {
     expect(list.kthFromEnd(4)).toBe(10);
     expect(list.kthFromEnd(-5)).toBe(null);
     expect(list.kthFromEnd(8)).toBe(null);
+  });
+
+  it('should take two Linked Lists and zip them together', () =>{
+    let list1 = new LL;
+    list1.insert(1);
+    list1.append(3);
+    list1.append(5);
+    list1.append(7);
+
+    let list2 = new LL;
+    list2.insert(2);
+    list2.append(4);
+    list2.append(6);
+    list2.append(8);
+
+    let newList = list1.zipList(list1, list2);
+    console.log(newList.toString());
+    expect(newList.getByIndex(2).value).toBe(3);
+    expect(newList.getByIndex(4).value).toBe(5);
+    expect(newList.getByIndex(9)).toBe(null);
+    expect(newList.length).toBe(8);
+    expect(newList.includes(50)).toBeFalsy();
   });
 });
