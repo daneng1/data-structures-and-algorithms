@@ -40,6 +40,7 @@ zipList - takes two Linked Lists and zips them together into one new Linked List
 1. Can return the value at node k from the end.
 1. Can combine two Linked Lists, alternating nodes from each LL.
 
+
 - Zip Lists
 ![](./zip-lists.png)
 
@@ -48,3 +49,7 @@ zipList - takes two Linked Lists and zips them together into one new Linked List
 
 - Append, Insert Before and After
 ![](./Append-before-after.png)
+
+- Append, Insert Before and After
+![Append, Insert Before, Insert After](./Append-before-after.png)
+
