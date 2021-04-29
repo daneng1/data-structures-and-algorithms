@@ -12,6 +12,7 @@ class LinkedList {
     const newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
+      this.length++;
     } else {
       newNode.next = this.head;
       this.head = newNode;
@@ -24,6 +25,7 @@ class LinkedList {
 
     if (!this.head) {
       this.head = node;
+      this.length++;
     } else {
       let current = this.head;
 
@@ -58,6 +60,46 @@ class LinkedList {
     }
     return current;
   }
+
+  kthFromEnd(k) {
+    if (k < 0 || k > this.length) return null;
+    const target = (this.length) - k;
+    let current = this.head;
+    for( let i=1;i <= this.length; i++) {
+      if (i === target) {
+        return current.value;
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
+  zipList(list1, list2) {
+    if (list1.head === null) {
+      return list2;
+    }
+    if (list2.head === null) {
+      return list1.head;
+    }
+
+    let newList = new LinkedList;
+    list1 = list1.head;
+    list2 = list2.head;
+
+    while(list1 || list2) {
+      if (list1) {
+        newList.append(list1.value);
+        list1 = list1.next;
+      }
+      if (list2) {
+        newList.append(list2.value);
+        list2 = list2.next;
+      }
+    }
+    // console.log(newList.toString());
+    return newList;
+  }
+
 
   // insertBeforeIndex(index, newValue) {
   //   const newNode = new Node(newValue);
