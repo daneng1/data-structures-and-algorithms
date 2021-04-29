@@ -39,3 +39,12 @@ zipList - takes two Linked Lists and zips them together into one new Linked List
 1. Can properly return a collection of all the values that exist in the linked list
 1. Can return the value at node k from the end.
 1. Can combine two Linked Lists, alternating nodes from each LL.
+
+- Zip Lists
+![](./zip-lists.png)
+
+- kth From End
+![](./kth-from-end.png)
+
+- Append, Insert Before and After
+![](./Append-before-after.png)
