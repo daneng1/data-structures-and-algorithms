@@ -2,55 +2,51 @@
 
 const Node = require('./node.js');
 
-function Stack() {
-  this.top = null;
-  this.length = 0;
-}
-
-Stack.prototype.push = function(val) {
-
-  const newNode = new Node(val);
-  if (!this.top) {
-    this.top = newNode;
-    this.length++;
-  } else {
-    newNode.next = this.top;
-    this.top = newNode;
-    this.length++;
-  }
-};
-
-Stack.prototype.pop = function() {
-  if (this.isEmpty() === null) {
-    return null;
-  }
-  const temp = this.top.next;
-  delete this.top;
-  this.top = temp;
-  return this;
-};
-
-Stack.prototype.peek = function() {
-  if (this.isEmpty() === null) {
-    return null;
+class Stack{
+  constructor() {
+    this.top = null;
+    this.length = 0;
   }
 
-  return this.top.value;
-};
-
-Stack.prototype.isEmpty = function() {
-  return !this.top ? null : 'found top';
-};
-
-Stack.prototype.print = function() {
-  let thisNode = this.top;
-  let output = '';
-
-  while (thisNode) {
-    output = output.concat(`{ ${thisNode.value} } => `);
-    thisNode = thisNode.next;
+  push(val) {
+    let node = new Node(val);
+    node.next = this.top;
+    this.top = node;
+    return this;
   }
-  return output.concat('NULL');
+
+  pop() {
+    if (this.top === null) {
+      return null;
+    }
+    const temp = this.top;
+    this.top = this.top.next;
+    temp.next = null;
+    return temp.value;
+  }
+
+  peek() {
+    if (this.isEmpty() === null) {
+      return null;
+    }
+
+    return this.top.value;
+  }
+
+  isEmpty() {
+    return !this.top ? null : 'found top';
+  }
+
+  print() {
+    let thisNode = this.top;
+    let output = '';
+
+    while (thisNode) {
+      output = output.concat(`{ ${thisNode.value} } => `);
+      thisNode = thisNode.next;
+    }
+    return output.concat('NULL');
+  }
 }
 
 module.exports = Stack;
