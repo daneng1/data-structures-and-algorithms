@@ -24,4 +24,4 @@ Enclosed are methods that utilize the data concepts of Queues with Stacks.
 
 ---
 
-![Queues with Stacks](/challenges/stacks-queues/queues-with-stacks.png)
+![Queues with Stacks](/queues-with-stacks.png)
