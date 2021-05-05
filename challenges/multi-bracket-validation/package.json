@@ -1,0 +1,14 @@
+{
+  "name": "multi-bracket-validation",
+  "version": "1.0.0",
+  "description": "Multi Bracket validation code challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "author": "Dan Engel",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
