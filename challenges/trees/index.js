@@ -16,6 +16,7 @@ binarySearchTree.addNode(60);
 
 console.log(binarySearchTree.contains(36));
 console.log(binarySearchTree.contains(33));
+console.log(binarySearchTree.findMaximumValue());
 
 console.log(binarySearchTree.preOrder());
 console.log(binarySearchTree.inOrder());

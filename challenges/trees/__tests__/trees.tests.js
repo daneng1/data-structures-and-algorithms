@@ -14,6 +14,7 @@ describe('______Binary Tree_____', () => {
     tree.addNode(5);
     tree.addNode(10);
     tree.addNode(3);
+    console.log(tree);
     expect(tree.root.val).toEqual(5);
     expect(tree.root.right.val).toEqual(10);
     expect(tree.root.left.val).toEqual(3);
@@ -46,7 +47,18 @@ describe('______Binary Tree_____', () => {
     expect(tree.contains(6)).toEqual(true);
     expect(tree.contains(11)).toEqual('Can not find 11 in the tree');
 
+  });
 
+  it('should find the max value in the binary search tree', () => {
+    const tree = new BST;
+    tree.addNode(5);
+    tree.addNode(10);
+    tree.addNode(3);
+    tree.addNode(4);
+    tree.addNode(6);
+    tree.addNode(2);
+
+    expect(tree.findMaximumValue()).toEqual('this is the max value in the tree: 10');
   });
 });
 
@@ -94,5 +106,17 @@ describe('______Binary Search Tree_____', () => {
     expect(tree.contains(11)).toEqual('Can not find 11 in the tree');
 
 
+  });
+
+  it('should find the max value in the binary search tree', () => {
+    const tree = new BST;
+    tree.addNode(5);
+    tree.addNode(10);
+    tree.addNode(3);
+    tree.addNode(4);
+    tree.addNode(6);
+    tree.addNode(2);
+
+    expect(tree.findMaximumValue()).toEqual('this is the max value in the tree: 10');
   });
 });
