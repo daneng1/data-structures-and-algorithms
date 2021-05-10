@@ -4,7 +4,8 @@
 
 ## Challenge
 
-- write methods to create new binary search trees, search the tree and return the values in the tree based on post order, in order and pre order methodology.
+- Write methods to create new binary search trees, search the tree and return the values in the tree based on post order, in order and pre order methodology.
+- Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
 ## Approach & Efficiency
 
@@ -17,6 +18,7 @@
 - preOrder() - sorts the values in the tree base on read, left, right method and return an array of all values in the tree.
 - inOrder() - sorts the values in the tree base on  left, read, right method and returns in order an array of all values in the tree.
 - postOrder() - sorts the values in the tree base on left, right, read method and return an array of all values in the tree.
+- findMaximumValue() - return the maximum value found in the binary tree.
 
 ## Testing
 
@@ -26,7 +28,9 @@
 1. Can successfully return a collection from a preorder traversal
 1. Can successfully return a collection from an inorder traversal
 1. Can successfully return a collection from a postorder traversal
+1. Can succesfully return the max value in the tree
 
 ### UML
 
 ![BST Diagram](bst.png)
+![Max Value](max-val.png)

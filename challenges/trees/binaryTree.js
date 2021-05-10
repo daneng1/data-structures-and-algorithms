@@ -87,6 +87,8 @@ class BinaryTree{
     _walk(this.root);
     return results;
   }
+
+  
 }
 
 module.exports = BinaryTree;
