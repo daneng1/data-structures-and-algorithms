@@ -14,11 +14,12 @@ binarySearchTree.addNode(40);
 binarySearchTree.addNode(36);
 binarySearchTree.addNode(60);
 
-console.log(binarySearchTree.contains(36));
-console.log(binarySearchTree.contains(33));
-console.log(binarySearchTree.findMaximumValue());
+// console.log(binarySearchTree.contains(36));
+// console.log(binarySearchTree.contains(33));
+// console.log(binarySearchTree.findMaximumValue());
+console.log(binarySearchTree.breadthFirst());
 
-console.log(binarySearchTree.preOrder());
-console.log(binarySearchTree.inOrder());
-console.log(binarySearchTree.postOrder());
+// console.log(binarySearchTree.preOrder());
+// console.log(binarySearchTree.inOrder());
+// console.log(binarySearchTree.postOrder());
 
