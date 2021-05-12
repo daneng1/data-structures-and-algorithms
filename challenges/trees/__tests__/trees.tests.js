@@ -119,4 +119,17 @@ describe('______Binary Search Tree_____', () => {
 
     expect(tree.findMaximumValue()).toEqual('this is the max value in the tree: 10');
   });
+
+  it('should return the values using breadth first search', () => {
+    const tree = new BST;
+    expect(tree.breadthFirst()).toEqual(null);
+    tree.addNode(5);
+    tree.addNode(10);
+    tree.addNode(3);
+    tree.addNode(4);
+    tree.addNode(6);
+    tree.addNode(2);
+
+    expect(tree.breadthFirst()).toEqual([5,3,10,2,4,6]);
+  });
 });

@@ -1,6 +1,7 @@
 'use strict';
 
 const Node = require('./node.js');
+const Queue = require('../stacks-queues/queue');
 
 class BinarySearchTree{
   constructor(root) {
@@ -95,6 +96,23 @@ class BinarySearchTree{
       newArr[i]>maxVal ? maxVal = newArr[i] : maxVal;
     }
     return `this is the max value in the tree: ${maxVal}`;
+  }
+
+  breadthFirst() {
+    const newArr = [];
+    const queue = [this.root];
+
+    if(!this.root) return null;
+    while(queue.length !== 0) {
+      for (let i=0; i<queue.length; i++) {
+        let node = queue.shift();
+        // console.log(node);
+        newArr.push(node.val);
+        if(node.left) queue.push(node.left);
+        if(node.right) queue.push(node.right);
+      }
+    }
+    return newArr;
   }
 }
 
