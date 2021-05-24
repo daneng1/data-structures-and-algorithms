@@ -2,6 +2,11 @@
 
 > Insertion Sort is a sorting algorithm that traverses an array and sorts the values. The algorithm keeps track of the minimum value and places it in the fron tof the array whcih will be sorted incrementally.
 
+## Link to Code
+
+You can find the code here...
+[https://github.com/daneng1/data-structures-and-algorithms/tree/main/challenges/insertion-sort](https://github.com/daneng1/data-structures-and-algorithms/tree/main/challenges/insertion-sort).
+
 ## Pseudo Code
 
 ```
@@ -38,3 +43,13 @@ Next, 2 is compared to 1 which is smaller and they are also swapped in the array
 On the second pass we start with the second number. It is compared to the next number which is smaller and they are swapped in the array resulting in [1,2,8] which is now incrementally sorted.
 
 ![Pass 1](insert-sort-03.png)
+
+### Whiteboard Diagram
+
+![Pass 1](insert-sort-04.png)
+
+### Efficiency
+
+Time - since this requires a nested loop, the big O(n^2).
+
+Space - no additional space is needed and the space is 0(1).
